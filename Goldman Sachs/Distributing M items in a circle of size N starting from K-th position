@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int solve(int n,int m,int k)
+{
+    int ans=(m+k-1)%n;
+    if(ans==0) return n;
+    return ans;
+}
+int main()
+{
+    int n=5;
+    int m=8;
+    int k=2;
+    cout<<solve(n,m,k);
+    return 0;
+}
