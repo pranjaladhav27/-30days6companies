@@ -1,0 +1,32 @@
+ull getNthUglyNo(int n) {
+	    ull ugly[n];
+	    ull i2=0;
+	    ull i3=0;ull i5=0;
+	    ull nxtmulof2=2;
+	    ull nxtmulof3=3;
+	    ull nxtmulof5=5;
+	    ull nxtugly=1;
+	    ugly[0]=1;
+	    for(int i=1;i<n;i++)
+	    {
+	        nxtugly=min(nxtmulof2,min(nxtmulof3,nxtmulof5));
+	        ugly[i]=nxtugly;
+	        
+	        if(nxtugly==nxtmulof2)
+	        {
+	            i2=i2+1;
+	            nxtmulof2=ugly[i2]*2;
+	        }
+	        if(nxtugly==nxtmulof3)
+	        {
+	            i3=i3+1;
+	            nxtmulof3=ugly[i3]*3;
+	        }
+	        if(nxtugly==nxtmulof5)
+	        {
+	            i5=i5+1;
+	            nxtmulof5=ugly[i5]*5;
+	        }
+	    }
+	    return nxtugly;
+	}
